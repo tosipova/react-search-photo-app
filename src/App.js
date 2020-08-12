@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
 import SearchForm from './components/SearchForm';
 import SearchResultCard from './components/SearchResultCard';
@@ -24,14 +23,24 @@ function App() {
   }
 
   return (
-    <div className="App container">
+    <div className="container">
       <SearchForm
         onSubmit={onSubmitSeachFormCallback}
         value={query}
         onChange={onInputChangeCallback}
       />
 
-      <SearchResultCard {...photos[0]} />
+      {
+        photos.map(photo => {
+          return (
+            <SearchResultCard
+              alt_description={photo.alt_description}
+              description={photo.description}
+              urls={photo.urls}
+            />
+          )
+        })
+      }
 
       {/* Pagination */}
     </div>

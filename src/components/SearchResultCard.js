@@ -3,7 +3,7 @@ import React from 'react';
 function SearchResultsCard(props) {
     const { alt_description, description, urls = {} }
         = props;
-
+    
     if (!urls.thumb) {
         return null;
     }
