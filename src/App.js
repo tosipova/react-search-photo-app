@@ -6,7 +6,7 @@ import fetchPhotos from './services/fetch-photos';
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('dog');
   const [totalPages, setTotalPages] = useState();
   const [currentPage, setCurrentPage] = useState();
 
@@ -74,18 +74,27 @@ function App() {
       */}
 
       {totalPages &&
-        <ReactPaginate
-          pageCount={totalPages}
-          pageRangeDisplayed={4}
-          marginPagesDisplayed={1}
-          onPageChange={onPageChangeCallback}
-          forcePage={currentPage - 1}
-          activeClassName="active"
-          containerClassName="pagination"
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-        />}
-    </div>
+        <>
+          <ReactPaginate
+            pageCount={totalPages}
+            pageRangeDisplayed={4}
+            marginPagesDisplayed={0}
+            onPageChange={onPageChangeCallback}
+            forcePage={currentPage - 1}
+            activeClassName="active"
+            containerClassName="pagination"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-link"
+            nextClassName="page-link"
+            previousLabel="<<"
+            nextLabel=">>"
+            breakClassName="d-none"
+          />
+          <div>Total Pages:{totalPages}</div>
+        </>
+        }
+     </div>
   );
 }
 
