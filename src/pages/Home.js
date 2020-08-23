@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import SearchForm from '../components/SearchForm';
-import SearchResultCard from '../components/SearchResultCard';
+import SearchResultsCard from '../components/SearchResultsCard';
 import fetchPhotos from '../services/fetch-photos';
 
 function Home() {
@@ -52,12 +52,15 @@ function Home() {
       {
         photos.map(photo => {
           return (
-            <SearchResultCard
+            <SearchResultsCard
               alt_description={photo.alt_description}
               description={photo.description}
               urls={photo.urls}
               key={photo.alt_description}
               id={photo.id}
+              likes={photo.likes}
+              tags={photo.tags}
+              user={photo.user}
             />
           )
         })

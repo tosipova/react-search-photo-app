@@ -5,12 +5,6 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import SinglePhoto from './SinglePhoto';
 
-// Add React-router
-// Add home page
-// Add single photo page
-
-
-
 
 const App = () => {
 
@@ -20,11 +14,11 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/about-us">
-          <AboutUs />
-        </Route>
         <Route path="/photos/:id">
           <SinglePhoto />
+        </Route>
+        <Route path="/about-us">
+          <AboutUs />
         </Route>
       </Switch>
     </BrowserRouter >
