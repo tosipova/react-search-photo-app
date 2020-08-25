@@ -17,3 +17,23 @@ code {
   width: 18rem;
   margin-bottom: 10px;
 }
+.card-title {
+ font: bold;
+ color: crimson;
+}
+.card-text {
+  color: blue;
+}
+.card-text::first-letter {
+  text-transform: capitalize; 
+}
+
+.card-likes {
+  color: darkorange;
+}
+.card-tag {
+  color: brown;
+}
+.card-username {
+  color: mediumslateblue;
+}
