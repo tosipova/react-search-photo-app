@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SearchResultsCard(props) {
-    const { alt_description, description, urls = {}, id, likes, tags, user }
+    const { alt_description, description, urls = {}, id, }
         = props;
 
     if (!urls.thumb) {
@@ -19,9 +19,9 @@ function SearchResultsCard(props) {
                 <h5 className="card-title">{description}</h5>
                 <p className="card-text">{alt_description}</p>
                
-                <p className="card-likes">Likes:{likes}</p>
+                {/* <p className="card-likes">Likes:{likes}</p>
                 <p className="card-tag">Tag:{tags.map((tag) => tag.title).join(",")}</p>
-                <p className="card-username">User:{user.username}</p>
+                <p className="card-username">User:{user.username}</p> */}
 
             </div>
         </div>
