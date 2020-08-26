@@ -8,8 +8,8 @@ import SinglePhoto from './SinglePhoto';
 
 const App = () => {
 
-  // React context start
-
+  // React context start 2.0
+ 
   return (
     <BrowserRouter>
       <Switch>
