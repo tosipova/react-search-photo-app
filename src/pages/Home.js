@@ -4,6 +4,7 @@ import SearchForm from '../components/SearchForm';
 import SearchResultsCard from '../components/SearchResultsCard';
 import fetchPhotos from '../services/fetch-photos';
 
+
 function Home() {
   const [photos, setPhotos] = useState([]);
   const [query, setQuery] = useState('dog');
