@@ -3,12 +3,15 @@ import ReactPaginate from 'react-paginate';
 import SearchForm from '../components/SearchForm';
 import SearchResultsCard from '../components/SearchResultsCard';
 import fetchPhotos from '../services/fetch-photos';
+import MyContext from '../Context';
+
 
 function Home() {
-  const [photos, setPhotos] = useState([]);
   const [query, setQuery] = useState('dog');
   const [totalPages, setTotalPages] = useState();
   const [currentPage, setCurrentPage] = useState();
+  const { photos, setPhotos } = React.useContext(MyContext);
+
 
   const onSubmitSeachFormCallback = event => {
     event.preventDefault();
@@ -97,8 +100,8 @@ function Home() {
           />
           <div>Total Pages:{totalPages}</div>
         </>
-        }
-     </div>
+      }
+    </div>
   );
 }
 

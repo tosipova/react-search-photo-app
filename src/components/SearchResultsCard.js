@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SearchResultsCard(props) {
     const { alt_description, description, urls = {}, id, }
@@ -11,9 +12,9 @@ function SearchResultsCard(props) {
 
     return (
         <div className="card">
-            <a href={`/photos/${id}`}>
+            <Link to={`/photos/${id}`}>
                 <img src={urls.thumb} className="card-img-top" alt="..." />
-            </a>
+            </Link>
 
             < div className="card-body">
                 <h5 className="card-title">{description}</h5>
