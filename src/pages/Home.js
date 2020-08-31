@@ -3,6 +3,30 @@ import ReactPaginate from 'react-paginate';
 import SearchForm from '../components/SearchForm';
 import SearchResultsCard from '../components/SearchResultsCard';
 import fetchPhotos from '../services/fetch-photos';
+import Container from '@material-ui/core/Container';
+// import { makeStyles } from '@material-ui/core/styles';
+// import Pagination from '@material-ui/lab/Pagination';
+
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& > *': {
+//       marginTop: theme.spacing(2),
+//     },
+//   },
+// }));
+
+// export function BasicPagination() {
+//   const classes = useStyles();
+//   return (
+//     <div className={classes.root}>
+//       <Pagination count={10} />
+//       <Pagination count={10} color="primary" />
+//       <Pagination count={10} color="secondary" />
+//       <Pagination count={10} disabled />
+//     </div>
+//   );
+// }
 
 function Home() {
   const [photos, setPhotos] = useState([]);
@@ -29,6 +53,11 @@ function Home() {
 
     console.log(page);
 
+    function handleClick(event) {
+      event.preventDefault();
+      console.info('You clicked a breadcrumb.');
+    }
+
 
     if (selected) {
       setCurrentPage(selected + 1);
@@ -42,7 +71,9 @@ function Home() {
   }
 
   return (
-    <div className="container">
+
+    <Container maxWidth="sm">
+
       <SearchForm
         onSubmit={onSubmitSeachFormCallback}
         value={query}
@@ -68,11 +99,36 @@ function Home() {
 
       {/* 
       
-      + Choose a page
-        + Choose an exactly numeric page
-        + Choose previous or next page
+      <SearchForm
+        onSubmit={onSubmitSeachFormCallback}
+        value={query}
+        onChange={onInputChangeCallback}
+        />
+        
+      {
+        photos.map(photo => {
+          return (
+            <SearchResultsCard
+              alt_description={photo.alt_description}
+              description={photo.description}
+              urls={photo.urls}
+              key={photo.alt_description}
+              id={photo.id}
+              likes={photo.likes}
+              tags={photo.tags}
+              user={photo.user}
+              />
+              )
+            })
+          }
+          
+          {/* 
+            
+            + Choose a page
+            + Choose an exactly numeric page
+            + Choose previous or next page
 
-      - Set a page button to active state
+            - Set a page button to active state
       - Add styles
       
       */}
@@ -97,8 +153,8 @@ function Home() {
           />
           <div>Total Pages:{totalPages}</div>
         </>
-        }
-     </div>
+      }
+    </Container>
   );
 }
 

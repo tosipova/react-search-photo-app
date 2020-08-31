@@ -1,4 +1,12 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
+import Typography from '@material-ui/core/Typography';
+
+
 
 function SearchResultsCard(props) {
     const { alt_description, description, urls = {}, id, }
@@ -8,23 +16,30 @@ function SearchResultsCard(props) {
         return null;
     }
 
-
     return (
-        <div className="card">
-            <a href={`/photos/${id}`}>
-                <img src={urls.thumb} className="card-img-top" alt="..." />
-            </a>
 
-            < div className="card-body">
-                <h5 className="card-title">{description}</h5>
-                <p className="card-text">{alt_description}</p>
-               
-                {/* <p className="card-likes">Likes:{likes}</p>
-                <p className="card-tag">Tag:{tags.map((tag) => tag.title).join(",")}</p>
-                <p className="card-username">User:{user.username}</p> */}
+        <Card >
+            <CardActionArea>
+                <a href={`/photos/${id}`}>
+                    <CardMedia
+                        src={urls.thumb}
+                        title=""
+                        component="img"
+                    />
+                </a>
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {alt_description}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {description}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
 
-            </div>
-        </div>
+
+
+        </Card>
     )
 }
 

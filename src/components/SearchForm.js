@@ -1,18 +1,22 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 function SearchForm(props) {
     return (
         <form
             onSubmit={props.onSubmit}
-            className="form form-inline"
         >
-            <input
-                className="form-control mb-2 mr-sm-2"
-                type="text"
+
+            <TextField variant="outlined"
                 value={props.query}
                 onChange={props.onChange}
+                size="small"
             />
-            <button className="btn btn-primary mb-2 mr-sm-2"> Search photo </button>
+            <Button variant="contained" color="primary" type="submit">
+              Search photo
+            </Button>
         </form>
     )
 }

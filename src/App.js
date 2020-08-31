@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import SinglePhoto from './SinglePhoto';
+import Photo from './pages/Photo';
 
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
           <Home />
         </Route>
         <Route path="/photos/:id">
-          <SinglePhoto />
+          <Photo />
         </Route>
         <Route path="/about-us">
           <AboutUs />
