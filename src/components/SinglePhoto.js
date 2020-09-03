@@ -15,7 +15,7 @@ const SinglePhoto = (props) => {
   return (<div className="card">
     <div className="card-body">
       <h5 className="card-title">{alt_description}</h5>
-      <img src={photo.urls.thumb} width="200px" />
+      <img src={photo.urls.thumb} width="200px" alt="" />
       <p className="card-likes"><AiFillLike />Likes:{likes}</p>
       <p className="card-tags">tags:{tags.slice(0, 3).map((tags) => tags.title).join(",")}</p>
       <p className="card-username">User:{user.username}</p>
